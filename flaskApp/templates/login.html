@@ -5,26 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In Page</title>
-    <link rel="stylesheet" href="static/style1.css">
-
-
-    <p>
-    <form action="/userdata" method="GET">
-        <label for="User">Username:</label>
-        <input type="text" required id="user_name" name="user_name">
-        <label for="Password">Password:</label>
-        <input type="password" id="password" name="password">
-        <button type="submit">Submit</button>
-    </form>
-
-    </p>
-
-
+    <link rel="stylesheet" href="../static/style1.css">
 </head>
 
 <body>
     <div class="hero">
-
+        <form action="/userdata" method="GET">
             <div class="form-box">
             <div class= "button-box">
                 <div id = "btn"></div>
@@ -32,10 +18,18 @@
                 <button type = "button" class = "toggle-btn">Log In</button>
             </div>
             <div class = "social-icons">
-                <img src = "static/social media icons/ig.JPG">
-                <img src = "static/social media icons/fb.JPG">
-                <img src = "static/social media icons/twitter.JPG" >
+                <img src = "../static/social media icons/ig.JPG">
+                <img src = "../static/social media icons/fb.JPG">
+                <img src = "../static/social media icons/twitter.JPG" >
             </div>
+            <form class = "input-group">
+                <input type = "text" class = "input-field" placeholder = "User ID"
+                required>
+                <input type = "text" class = "input-field" placeholder = "Enter Password"
+                required>
+                <input type = "checkbox" class =  "check-box"><span> Remember Password</span>
+                <button type = "submit" class = "submit-btn">Log in</button>
+            </form>
         </div>
         
     </div>

@@ -53,10 +53,40 @@
     text-align: center;
 }
 .social-icons img{
-   width: 30px;
+   width: 20px auto;
    margin: 0 10px;
    box-shadow: 0 0 20px 0 #ffffff;
    cursor: pointer;
-    border-radius: 0%;
+   border-radius: 10%;
 
+}
+.input-group{
+
+    top: 180;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1 pix solid #6f6464;
+    outline: none;
+    background: transparent;
+
+}
+.submit-btn {
+    width: 50%;
+    padding:  10px 15px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #b69c9c,#e5e5e5);
+    border: 0;
+    outline: none;
+    border-radius:60px;
 }
