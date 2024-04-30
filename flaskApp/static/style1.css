@@ -20,11 +20,12 @@
     margin: 6% auto;
     background: #ffffff;
     padding: 5px;
+    border-radius: 10px;
 
 
 }
 .button-box{
-    width: 220px;
+    width: 110px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #6f6464;
