@@ -15,6 +15,9 @@
         <label for="Password">Password:</label>
         <input type="password" id="password" name="password">
         <button type="submit">Submit</button>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
     </form>
 
     </p>

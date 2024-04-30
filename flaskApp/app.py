@@ -8,16 +8,18 @@ from users import *
 from methods import *
 import time
 from datetime import datetime
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_bcrypt import Bcrypt
 
 
 app = Flask(__name__)
 
+bcrypt = Bcrypt()
 api_key = "e3a3410195304ed7a410f3c4b6149a50"
 client = MongoClient('mongodb+srv://davidV:p6Vk8G8s!5g.23X@atlascluster.1m2wekf.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster')
 
 @app.route("/")
 @app.route("/home")
-
 
 def home():
     return render_template("index.html")
@@ -215,15 +217,56 @@ def search():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+
+
     
     return render_template("login.html" )
 
+@app.route("/signup", methods=['GET', 'POST'])
+def signup():
+    
+    return render_template("signup.html" )
+
+@app.route("/createAccount", methods=['GET', 'POST'])
+def createAccount():
+    username = str(request.args.get('user_name'))
+    password = str(request.args.get('password'))
+    db_list = client.list_database_names()
+    check = username in db_list
+    
+    db = client[username]
+    collection = db["password"]
+    
+    key = {
+        "_id":bcrypt.generate_password_hash(password).decode('utf-8')
+    }
+
+    collection.insert_one(key)
+
+
+    if check:
+        return render_template('signup.html', error="Username already exits")
+
+
+    return render_template("userdata.html", username = username)
+
+
+
 @app.route("/userdata", methods=['GET'])
 def userdata():
-    username = str(request.args.get('user_name'))
-    #password = str(request.form['password'])
 
-    recipeList = saved(username) 
+
+    username = str(request.args.get('user_name'))
+    password = str(request.args.get('password'))
+
+    
+    
+
+    if checkUser(username,password):
+        recipeList = saved(username)
+    else:
+        return render_template('login.html', error="Username not found or Incorrect Password")
+
 
     return render_template("userdata.html", recipeList=recipeList, username = username)
 
@@ -402,3 +445,6 @@ def createNewRecipe():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
+
+
+
