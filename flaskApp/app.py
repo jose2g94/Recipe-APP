@@ -301,44 +301,49 @@ def addFave():
 @app.route("/add_recipe", methods=["POST"])
 def add_recipe():
     username = request.form.get("user_name")
+    password = request.form.get("password")
 
-    #This can probably be simplified so we do not have get each individual field
-    title = request.form.get("title")
-    id = request.form.get("id")
-    image = request.form.get("image")
-    summary = request.form.get("summary")
-    image = request.form.get("image")
-    ingredients = request.form.get("ingredients")
-    website = request.form.get("website")
-    vegetarian= request.form.get("vegetarian")
-    vegan= request.form.get("vegan")
-    glutenFree= request.form.get("glutenFree")
-    instructions= request.form.get("instructions")
+    
+    if checkUser(username,password):
+        #This can probably be simplified so we do not have get each individual field
+        title = request.form.get("title")
+        id = request.form.get("id")
+        image = request.form.get("image")
+        summary = request.form.get("summary")
+        image = request.form.get("image")
+        ingredients = request.form.get("ingredients")
+        website = request.form.get("website")
+        vegetarian= request.form.get("vegetarian")
+        vegan= request.form.get("vegan")
+        glutenFree= request.form.get("glutenFree")
+        instructions= request.form.get("instructions")
 
-    # Creates a dictionary representing the recipe data
-    recipe_data = {
-        "title": title,
-        "id": id,
-        "image": image,
-        "website": website,
-        "vegetarian": vegetarian,  
-        "vegan": vegan, 
-        "glutenFree": glutenFree, 
-        "summary": summary,
-        "ingredients": ingredients,
-        "instructions": instructions
+        # Creates a dictionary representing the recipe data
+        recipe_data = {
+            "title": title,
+            "id": id,
+            "image": image,
+            "website": website,
+            "vegetarian": vegetarian,  
+            "vegan": vegan, 
+            "glutenFree": glutenFree, 
+            "summary": summary,
+            "ingredients": ingredients,
+            "instructions": instructions
 
-    }
-    db = client[username]
-    collection = db["favorites"]
+        }
+        db = client[username]
+        collection = db["favorites"]
 
-    existing_recipe = collection.find_one({"_id": title})
-    if not existing_recipe:
-        addRecipe(username, recipe_data)
+        existing_recipe = collection.find_one({"_id": title})
+        if not existing_recipe:
+            addRecipe(username, recipe_data)
 
-    recipeList = saved(username) 
+        recipeList = saved(username) 
 
-    return render_template("userdata.html", recipeList=recipeList, username = username)
+        return render_template("userdata.html", recipeList=recipeList, username = username)
+    else:
+        return render_template('addfave.html', error="Username not found or Incorrect Password")
 
 @app.route("/view", methods=['POST', 'GET'])
 def view():
