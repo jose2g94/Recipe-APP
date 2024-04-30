@@ -60,3 +60,21 @@
     border-radius: 0%;
 
 }
+
+#login-box input[type=text], input[type="password"] {
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+    font-size: 20px;
+
+}
+#login-box{
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#login-box button{
+    text-align: center;
+}
