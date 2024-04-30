@@ -8,7 +8,6 @@ from users import *
 from methods import *
 import time
 from datetime import datetime
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_bcrypt import Bcrypt
 
 
@@ -233,15 +232,15 @@ def createAccount():
     password = str(request.args.get('password'))
     db_list = client.list_database_names()
     check = username in db_list
+    if check == False:
+        db = client[username]
+        collection = db["password"]
     
-    db = client[username]
-    collection = db["password"]
-    
-    key = {
+        key = {
         "_id":bcrypt.generate_password_hash(password).decode('utf-8')
-    }
+        }
 
-    collection.insert_one(key)
+        collection.insert_one(key)
 
 
     if check:
