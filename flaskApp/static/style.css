@@ -226,6 +226,12 @@ button:hover {
     padding-right: 10px;
 }
 
+.randomBtn {
+    border-radius: none;
+    padding-right: 20px;
+
+}
+
 
 
 .categorySearch {

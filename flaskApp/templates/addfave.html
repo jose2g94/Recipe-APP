@@ -7,9 +7,9 @@
 <h3>Add your faves</h3>
 <h3>Title: {{recipe.title}}</h3>
 <h4>ID: {{recipe.id}}</h4>
-
+<img src="{{recipe.image}}" alt="No Image Available" width="300">
 <p>Enter username in order to save</p>
-<form action="/add_recipe" method="POST">
+<form action="/add_recipe" action="/addfave" method="POST">
     <label for="User">Username:</label>
     <input type="text" id="user_name" required name="user_name">
     <label for="Password">Password:</label>

@@ -343,7 +343,21 @@ def add_recipe():
 
         return render_template("userdata.html", recipeList=recipeList, username = username)
     else:
-        return render_template('addfave.html', error="Username not found or Incorrect Password")
+        title = request.form.get("title")
+        id = request.form.get("id")
+        image = request.form.get("image")
+        summary = request.form.get("summary")
+        image = request.form.get("image")
+        ingredients = request.form.get("ingredients")
+        website = request.form.get("website")
+        vegetarian= request.form.get("vegetarian")
+        vegan= request.form.get("vegan")
+        glutenFree= request.form.get("glutenFree")
+        instructions= request.form.get("instructions")
+        recipe = Recipe(title, id, image, summary,website, vegetarian,vegan, glutenFree, instructions, ingredients) 
+
+
+        return render_template('addfave.html', recipe = recipe,error="Username not found or Incorrect Password")
 
 @app.route("/view", methods=['POST', 'GET'])
 def view():
