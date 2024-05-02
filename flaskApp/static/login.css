@@ -14,25 +14,23 @@
 }
 .form-box{
     width: 500px;
-    height: 580px;
+    height: 600px;
     position: relative;
     left: 500px;
     top: 200px;
     margin: 6% auto;
     background: #ffffff;
     padding: 5px;
-    border-radius: 20px;
+    border-radius: 20PX;
     overflow: hidden;
 }
-.button-box{
-    width: 240px;
-    margin: 50px auto;
-    position: relative;
-    box-shadow: 0 0 20px 9px #6f6464;
-    border-radius: 60px;
+.wrapper h1{
+    font-size: 50px;
+    text-align: center;
+    color:#6e5656;
 }
 .toggle-btn{
-    padding: 20px 30px;
+    padding: 10px px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -46,7 +44,7 @@
     width: 110px;
     height: 100%;
     background: linear-gradient(to right, #b69c9c,#8f7373);
-    border-radius: 30px;
+    border-radius: 60px;
     transition: .5s;
 }
 .social-icons{
@@ -104,6 +102,11 @@ span{
 #login{
     left: 50px
 }
-#register{
-    left: 650px
+.register-link p a{
+    color:#2926269f;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+    text-decoration: underline;
 }
