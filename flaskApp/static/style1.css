@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
 .hero {
@@ -12,27 +13,26 @@
     position: absolute;
 }
 .form-box{
-    width: 480px;
+    width: 500px;
     height: 580px;
     position: relative;
-    left: 350px;
-    top: 50px;
+    left: 500px;
+    top: 200px;
     margin: 6% auto;
     background: #ffffff;
     padding: 5px;
-    border-radius: 10px;
-
-
+    border-radius: 20px;
+    overflow: hidden;
 }
 .button-box{
-    width: 110px;
-    margin: 35px auto;
+    width: 240px;
+    margin: 50px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #6f6464;
-    border-radius: 30px;
+    border-radius: 60px;
 }
 .toggle-btn{
-    padding: 10px 30px;
+    padding: 20px 30px;
     cursor: pointer;
     background: transparent;
     border: 0;
@@ -45,8 +45,8 @@
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to right, #b69c9c,#e5e5e5);
-    border-radius: 40px;
+    background: linear-gradient(to right, #b69c9c,#8f7373);
+    border-radius: 30px;
     transition: .5s;
 }
 .social-icons{
@@ -54,28 +54,56 @@
     text-align: center;
 }
 .social-icons img{
-   width: 30px;
-   margin: 0 10px;
+   width: 20px auto;
+   margin: 0 6px;
    box-shadow: 0 0 20px 0 #ffffff;
    cursor: pointer;
-    border-radius: 0%;
+   border-radius: 10%;
 
 }
+.input-group{
 
-#login-box input[type=text], input[type="password"] {
-    border-radius: 5px;
-    height: 30px;
-    width: 150px;
-    font-size: 20px;
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: left 0.5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1 pix solid #6f6464;
+    outline: none;
+    background: transparent;
 
 }
-#login-box{
+.submit-btn {
+    width: 85%;
+    padding: 10px 50px;
+    cursor: pointer;
     display: block;
-    width: 300px;
-    margin: 0 auto;
-    text-align: center;
+    margin: auto;
+    background: linear-gradient(to right, #b69c9c,#867070);
+    border: 0;
+    outline: none;
+    border-radius:150px;
 }
-
-#login-box button{
-    text-align: center;
+.check-box{
+   position: sticky;
+    margin: 30px 10px 30px 0px;
+}
+span{
+    color: #3c3636;
+    font-size: 14px;
+    bottom: 0px;
+    position: relative;
+}
+#login{
+    left: 50px
+}
+#register{
+    left: 650px
 }
