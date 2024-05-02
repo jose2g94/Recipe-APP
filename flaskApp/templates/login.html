@@ -12,7 +12,7 @@
 
 <body>
     <div class="hero">
-
+       
             <div class="form-box">
                 <div class= "button-box">
                    
@@ -36,7 +36,7 @@
                 </div> 
             <form action="/userdata" method="GET">
                 <label for="User">Username:</label>
-                <input type="text" required id="user_name" name="user_name">
+                <input type="text" class = "input-field" required id="user_name" name="user_name">
                 <br>
                 <label for="Password">Password:</label>
                 <input type="password" class = "input-field" id="password" name="password">
@@ -44,7 +44,7 @@
 
                 <button type="submit"  class = "submit-btn" >Submit</button>
                 <div class = "register-link">
-                    <p>Don't have an account? <a href = "signup.html"> Register</a></p>
+                    <p>Don't have an account? <a href = "/signup"> Register</a></p>
                 </div>
                 {% if error %}
                 <p style="color: red;">{{ error }}</p>
