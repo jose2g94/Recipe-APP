@@ -5,78 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In Page</title>
-    <link rel="stylesheet" href="../static/style1.css">
-      <form action="userdata.html" method="GET"></form>
+    <link rel="stylesheet" href="static/style1.css">
+
+
 </head>
 
 <body>
     <div class="hero">
-       
+
             <div class="form-box">
-                <div class= "button-box">
-                    <div id = "btn"></div>
-                    <button type = "button"  class = "toggle-btn" onclick= "login()" >Log In</button>
-                    <button type = "button" class = "toggle-btn" onclick= "register()"  >Register</button>
+            <div class= "button-box">
+                <div id = "btn"></div>
+                <button type = "button" class = "toggle-btn">Log In</button>
             </div>
             <div id="login-box">
-                <div class = "social-icons">
-                    <img src = "../static/social media icons/ig.JPG">
-                    <img src = "../static/social media icons/fb.JPG">
-                    <img src = "../static/social media icons/twitter.JPG" >
-                </div> 
             <form action="/userdata" method="GET">
-            <form id = "login" class = "input-group">
                 <label for="User">Username:</label>
-                <input type="text" class = "input-field" required id="user_name" name="user_name">
+                <input type="text" required id="user_name" name="user_name">
                 <br>
                 <label for="Password">Password:</label>
-                <input type="password" class ="input-field" id="password" name="password">
+                <input type="password" id="password" name="password">
                 <br>
-                <button type="submit" class = "submit-btn">Submit</button>
+                <button type="submit">Submit</button>
                 {% if error %}
                 <p style="color: red;">{{ error }}</p>
                 {% endif %}
             </form>
-            <
             </div>
-
-            <body>
-                <form id = "register" class = "input-group">
-                <form action="/createAccount" method="GET">
-                    <label for="username">Username:</label>
-                    <input type="text" class = "input-field" placeholder="user_name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" class = "input-field" placeholder="email" required>
-                    <label for="password">Password:</label>
-                    <input type="password" class = "input-field" placeholder="password" required>
-                    <button type="submit" class = "submit-btn">Sign Up</button>
-                    {% if error %}
-                        <p style="color: red;">{{ error }}</p>
-                        {% endif %}
-                </form>
-                </form>
-            
-            </form>
-
+            <div class = "social-icons">
+                <img src = "static/social media icons/ig.JPG">
+                <img src = "static/social media icons/fb.JPG">
+                <img src = "static/social media icons/twitter.JPG" >
+            </div>
         </div>
         
     </div>
-    <script>
-        var x = document.getElementById("login");
-        var y = document.getElementById("register");
-        var z = document.getElementById("btn");
-    
-        function register() {
-            x.style.left = "-400px";
-            y.style.left = "50px";
-            z.style.left = "110px";
-        }
-    
-        function login() {
-            x.style.left = "50px";
-            y.style.left = "550px";
-            z.style.left = "0px";
-        }
-    </script>
-    </body>
+</body>
+
+<return-home></return-home>
+
 </html>
